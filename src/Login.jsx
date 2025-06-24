@@ -12,7 +12,9 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     login(username, password);
-    navigate('/dashboard');
+    setTimeout(() => {
+        navigate('/dashboard');
+      }, 500); // Wait 0.5s before navigating
   };
 
   return (
