@@ -14,7 +14,8 @@ const Login = () => {
     login(username, password);
     setTimeout(() => {
         navigate('/dashboard');
-      }, 500); // Wait 0.5s before navigating
+        window.location.reload();
+      }, 500); // Wait 0.5s before navigating.
   };
 
   return (
