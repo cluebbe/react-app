@@ -5,6 +5,7 @@ import Dashboard from './Dashboard.jsx';
 import Home from './Home.jsx'; 
 import Admin from './Admin.jsx'; 
 import Login from './Login.jsx'; 
+import ContactForm from './Contact.jsx';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/contact" element={<ContactForm />} />
         </Routes>
       </div>
     </Router>

@@ -20,6 +20,9 @@ const Navbar = () => {
           <Link to="/" className="nav-link">Home</Link>      
         </div>
         <div className="nav-links nav-links-right">
+          <Link to="/contact" className="nav-link">Contact</Link>      
+        </div>
+        <div className="nav-links nav-links-right">
         {isAuthenticated ? (
           <>
             <Link to="/dashboard" className="nav-link">Dashboard</Link>
