@@ -7,6 +7,19 @@ const ContactForm = () => {
     mode: 'onChange',
   });
 
+// SAME AS:
+//   const ContactForm = () => {
+//   // Call useForm and store the result in a variable
+//   const form = useForm({ mode: 'onChange' });
+
+//   // Extract register and handleSubmit from the form object
+//   const register = form.register;
+//   const handleSubmit = form.handleSubmit;
+
+//   // Extract errors and isValid from the formState object inside form
+//   const errors = form.formState.errors;
+//   const isValid = form.formState.isValid;
+
 
   const onSubmit = (data) => {
     console.log('Form valid:', isValid);
@@ -37,7 +50,22 @@ const ContactForm = () => {
                 message: 'Invalid format',
               },
             })}
+            /* What’s happening here?
+            id="email": Sets the HTML id attribute for the input, useful for labels and accessibility.
+
+            {...register('email', {...})}:
+
+            The register function from React Hook Form connects this input to the form state and validation.
+            The first argument 'email' is the field name.
+            The second argument is an object specifying validation rules:
+            required: 'Email is required.' means the field must be filled in, or this message will show.
+            pattern: { value: ..., message: 'Invalid format' } means the input must match the provided regular expression (a basic email pattern), or the message will show.
+            The spread operator (...):
+
+            register returns an object with properties like onChange, onBlur, ref, and name.
+            {...register(...)} spreads these as props onto the <input>, so React Hook Form can track and validate the field automatically. */
           />
+
           {errors.email && <span className="validation-error">{errors.email.message}</span>}
         </div>
 
