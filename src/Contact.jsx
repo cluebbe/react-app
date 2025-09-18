@@ -63,7 +63,17 @@ const ContactForm = () => {
             The spread operator (...):
 
             register returns an object with properties like onChange, onBlur, ref, and name.
-            {...register(...)} spreads these as props onto the <input>, so React Hook Form can track and validate the field automatically. */
+            {...register(...)} spreads these as props onto the <input>, so React Hook Form can track and validate the field automatically. 
+            
+            This is equivalent to manually setting each prop like this:
+            <textarea
+              id="message"
+              name={register('email').name}
+              onChange={register('email').onChange}
+              onBlur={register('email').onBlur}
+              ref={register('email').ref}
+            />
+            */
           />
 
           {errors.email && <span className="validation-error">{errors.email.message}</span>}
